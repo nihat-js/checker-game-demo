@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Checker </title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="settings-wrapper">
+			<div id="settings">
+				<div class="head">
+					<h3 class="title"> Checkers </h3>
+					<span class="close" onclick="closeSetting()"> &times; </span>
+				</div>
+				<div class="body">
+					<div class="skins">
+						<div class="player-1">
+							<h3 class="title"> Player 1 </h3>
+							<img data-skin="black"  class="active-skin"  onclick="changeSkin(this,1)" src="images/stone/black-a.png" alt="" srcset=""> </button>
+							<img data-skin="red" onclick="changeSkin(this,1)" src="images/stone/red-a.png" >
+							<img data-skin="white" onclick="changeSkin(this,1)" src="images/stone/white-a.png" >
+						</div>
+						<img class="exchange" src="images/exchange.png" onclick="exchangeSkin()" alt="exchange" />
+						<div class="player-2">
+							<h3 class="title"> Player 2 </h3>
+							<img data-skin="black"   onclick="changeSkin(this,2)" src="images/stone/black-a.png" alt="" srcset=""> </button>
+							<img data-skin="red" class="active-skin"  onclick="changeSkin(this,2)" src="images/stone/red-a.png" >
+							<img data-skin="white" onclick="changeSkin(this,2)" src="images/stone/white-a.png" >
+						</div>
+					</div>
+	
+					<div class="music">
+						<span> Music </span> <img onclick="toggleMusic()" class="toggle-music" src="images/audio-on.png" alt="">
+						<div class="group">
+							<span class="bar"> </span> 
+							<span class="pointer" ondrag="changeVolume(event)" ondragover="changeVolume(event)"> </span>
+						</div>
+					</div>
+	
+	
+					<div class="sound">
+						<span> Sound </span> <img onclick="toggleSound()" class="toggle-sound" src="images/audio-on.png" alt="">
+					</div>
+	
+					<div class="back-jump">
+							<span> Back Jump</span>
+							<span class="group"  onclick="checkBackJump(this)" > <i class="pointer back-jump-1"></i>  <span> 
+						
+					</div>
+	
+					<div class="first-move">
+						<h4 class="text-center"> First Move </h4>
+						<div class="group">
+							<img onclick="changeFirstMover(this)" class="left-arrow" src="images/icons/arrow-left.png" alt="" srcset="">
+							<span class="current">Player 1</span>
+							<img onclick="changeFirstMover(this)" class="right-arrow" src="images/icons/arrow-right.png" alt="" srcset="">
+						</div>
+	
+					</div>
+					<div class="bot">
+						<h4 class="text-center"> Bot</h4>
+						<div class="group">
+							<img class="left-arrow" src="images/icons/arrow-left.png"  onclick="changeBotStatus('l') " src="" alt="">
+							<span class="current" > Off </span>
+							<img  class="right-arrow" src="images/icons/arrow-right.png" onclick="changeBotStatus('r') "  alt="">
+						</div>
+					</div>
+					<div class="actions">
+						<button onclick="playNewGame()"> Start new game </button>
+						<button onclick="loadNewGame()"> Load game </button>
+						<button onclick="playNewGame(8)"> Start with 8 stones (Exclusive) </button>
+						<button onclick="playNewGame(4)"> Start with 4 stones (Exclusive) </button>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+		
+		<div class="game" id="game">
+			<div class="nav">
+				<img class="homeImg" src="images/home.png" alt="" srcset="">
+				<span class="current"> Current </span>
+				<img class="settingImg" src="images/settings.png" alt="" onclick="openSettings()">
+				
+			</div>
+			<div class="board">
+
+			</div>
+			<div class="footer">
+
+			</div>
+		</div>
+	</div>
+
+	<script src="js/all.js"></script>
+	<!-- <script src="js/main.js"></script>
+	<script src="js/settings.js"></script>
+	<script src="js/stone_a.js"></script>
+	<script src="js/stone_b.js"></script> -->
+</body>
+
+</html>
